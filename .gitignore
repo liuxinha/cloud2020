@@ -1,0 +1,15 @@
+/cloud-provider-payment8001/target/
+/cloud-api-common/target/
+/cloud-consumer-feign-hystrix-order80/target/classes/
+/cloud-consumer-hystrix-dashboard9001/target/classes/
+/cloud-consumer-openfeign-order80/target/classes/
+/cloud-consumer-order80/target/classes/
+/cloud-consumerconsul-order80/target/classes/
+/cloud-consumerzk-order80/target/classes/
+/cloud-eureka-server7001/target/classes/
+/cloud-eureka-server7002/target/classes/
+/cloud-gateway-gateway9527/target/classes/
+/cloud-provider-hystrix-payment8001/target/classes/
+/cloud-provider-payment8002/target/classes/
+/cloud-provider-payment8004/target/classes/
+/cloud-providerconsul-payment8006/target/classes/

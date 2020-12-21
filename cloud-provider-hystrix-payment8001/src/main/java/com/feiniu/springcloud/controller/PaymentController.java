@@ -1,0 +1,63 @@
+package com.feiniu.springcloud.controller;
+
+import com.feiniu.springcloud.service.PaymentService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+/**
+ * @author liuxin
+ * @Date 2020/9/9 15:27
+ * Copyright (C) 1997-2020 康成投资（中国）有限公司
+ * <p>
+ * http://www.rt-mart.com
+ * <p>
+ * 版权归本公司所有，不得私自使用、拷贝、修改、删除，否则视为侵权
+ */
+@RestController
+@Slf4j
+public class PaymentController {
+
+    @Autowired
+    private PaymentService paymentService;
+
+    @Value("${server.port}")
+    private String servicePort;
+
+    /**
+     * 正常访问
+     */
+    @GetMapping("/payment/hystrix/ok/{id}")
+    public String paymentInfo_Ok(@PathVariable("id") Integer id) {
+        String result = paymentService.paymentInfo_Ok(id);
+        log.info("************result"+result);
+        return result;
+    }
+
+
+    /**
+     * 超时访问
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/payment/hystrix/timeout/{id}")
+    public String paymentInfo_TimeOut(@PathVariable("id") Integer id) {
+        String result = paymentService.paymentInfo_TimeOut(id);
+        log.info("*****result:" + result);
+        return result;
+
+    }
+
+
+    @GetMapping("/payment/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable Integer id) {
+        String result = paymentService.paymentCircuitBreaker(id);
+        log.info("***********result:"+result);
+        return result;
+    }
+
+}
