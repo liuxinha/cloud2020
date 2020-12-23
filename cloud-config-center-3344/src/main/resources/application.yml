@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/liuxinha/springcloud-config.git  #GitHub上面git仓库的名字
+          uri: https://github.com/liuxinha/springcloud-config.git  #GitHub上面仓库的clone地址
           #搜索目录
           search-paths:
             - springcloud-config
