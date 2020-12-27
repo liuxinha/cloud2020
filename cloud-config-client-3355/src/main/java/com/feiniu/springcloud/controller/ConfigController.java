@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 版权归本公司所有，不得私自使用、拷贝、修改、删除，否则视为侵权
  */
 @RestController
-public class configController {
+public class ConfigController {
 
     @Value("${config.info}")
     private String configInfo;
