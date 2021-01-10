@@ -6,6 +6,12 @@ spring:
   application:
     #向Eureka注册服务的服务名称
     name: cloud-payment-service
+    zipkin:
+      base-url: http://localhost:9411
+    sleuth:
+      sampler:
+        # 采样率介于0-1之间，1表示采集全部
+        probability: 1
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -13,6 +19,8 @@ spring:
     url: jdbc:mysql://localhost:3307/cloud?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     username: root
     password: root
+  zipkin:
+    base-url:
 
 eureka:
   client:

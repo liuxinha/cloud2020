@@ -28,6 +28,8 @@
         <module>cloud-config-client-3355</module>
         <module>cloud-config-client-3366</module>
         <module>cloud-stream-rabbitmq-provider8001</module>
+        <module>cloud-stream-rabbitmq-consumer8002</module>
+        <module>cloud-stream-rabbitmq-consumer8803</module>
     </modules>
 
 
